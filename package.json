@@ -1,0 +1,30 @@
+{
+  "name": "12.mysql",
+  "version": "1.0.0",
+  "description": "Module 12 Activity",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlottearichard/12.MySQL.git"
+  },
+  "keywords": [
+    "mysql"
+  ],
+  "author": "Charlotte Ri'Chard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlottearichard/12.MySQL/issues"
+  },
+  "homepage": "https://github.com/charlottearichard/12.MySQL#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}
