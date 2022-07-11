@@ -29,7 +29,12 @@ const db = mysql.createConnection(
 
 //GET ROUTE to show all candidates from the database
 app.get("/api/candidates", (req, res) => {
-  const sql = `SELECT * FROM candidates`;
+  const sql = `SELECT candidates.*, parties.name
+  AS party_name
+  FROM candidates
+  LEFT JOIN parties
+  ON candidates.party_id = parties.id`;
+
   db.query(sql, (err, rows) => {
     if (err) {
       // if there is a error the code is 500 which indicates a server error.
@@ -46,7 +51,12 @@ app.get("/api/candidates", (req, res) => {
 
 //shows a single candidate
 app.get("/api/candidate/:id", (req, res) => {
-  const sql = `SELECT * FROM candidates WHERE id = ?`;
+  const sql = `SELECT candidates.*, parties.name 
+  AS party_name
+  FROM candidates
+  LEFT JOIN parties
+  ON candidates.party_id = parties.id
+  WHERE candidates.id = ?`;
   const params = [req.params.id];
 
   db.query(sql, params, (err, row) => {
